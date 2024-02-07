@@ -16,6 +16,8 @@
 		CED6C6142B7285DE00620BDC /* CollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6C6132B7285DE00620BDC /* CollectionTests.swift */; };
 		CED6C61E2B7285DE00620BDC /* CollectionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6C61D2B7285DE00620BDC /* CollectionUITests.swift */; };
 		CED6C6202B7285DE00620BDC /* CollectionUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6C61F2B7285DE00620BDC /* CollectionUITestsLaunchTests.swift */; };
+		CED6C62D2B72872800620BDC /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED6C62C2B72872800620BDC /* CollectionViewCell.xib */; };
+		CED6C62F2B7289EE00620BDC /* PersonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6C62E2B7289EE00620BDC /* PersonCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		CED6C6192B7285DE00620BDC /* CollectionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollectionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED6C61D2B7285DE00620BDC /* CollectionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionUITests.swift; sourceTree = "<group>"; };
 		CED6C61F2B7285DE00620BDC /* CollectionUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CED6C62C2B72872800620BDC /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		CED6C62E2B7289EE00620BDC /* PersonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,10 +106,12 @@
 				CED6C5FC2B7285DB00620BDC /* AppDelegate.swift */,
 				CED6C5FE2B7285DB00620BDC /* SceneDelegate.swift */,
 				CED6C6002B7285DB00620BDC /* ViewController.swift */,
+				CED6C62E2B7289EE00620BDC /* PersonCollectionViewCell.swift */,
 				CED6C6022B7285DB00620BDC /* Main.storyboard */,
 				CED6C6052B7285DD00620BDC /* Assets.xcassets */,
 				CED6C6072B7285DD00620BDC /* LaunchScreen.storyboard */,
 				CED6C60A2B7285DD00620BDC /* Info.plist */,
+				CED6C62C2B72872800620BDC /* CollectionViewCell.xib */,
 			);
 			path = Collection;
 			sourceTree = "<group>";
@@ -137,6 +143,7 @@
 				CED6C5F52B7285DB00620BDC /* Sources */,
 				CED6C5F62B7285DB00620BDC /* Frameworks */,
 				CED6C5F72B7285DB00620BDC /* Resources */,
+				CED6C6302B73B27500620BDC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -233,6 +240,7 @@
 			files = (
 				CED6C6092B7285DD00620BDC /* LaunchScreen.storyboard in Resources */,
 				CED6C6062B7285DD00620BDC /* Assets.xcassets in Resources */,
+				CED6C62D2B72872800620BDC /* CollectionViewCell.xib in Resources */,
 				CED6C6042B7285DB00620BDC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,6 +261,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CED6C6302B73B27500620BDC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CED6C5F52B7285DB00620BDC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -261,6 +289,7 @@
 				CED6C6012B7285DB00620BDC /* ViewController.swift in Sources */,
 				CED6C5FD2B7285DB00620BDC /* AppDelegate.swift in Sources */,
 				CED6C5FF2B7285DB00620BDC /* SceneDelegate.swift in Sources */,
+				CED6C62F2B7289EE00620BDC /* PersonCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +471,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Collection/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -469,6 +499,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Collection/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
